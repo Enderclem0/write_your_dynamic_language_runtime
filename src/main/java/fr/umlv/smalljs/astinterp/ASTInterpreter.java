@@ -134,12 +134,12 @@ public final class ASTInterpreter {
         yield UNDEFINED;
       }
       case ObjectLiteral(Map<String, Expr> initMap, int lineNumber) -> {
-        var newEnv = JSObject.newEnv(env);
+        var object = JSObject.newObject(null);
         for (var entry : initMap.entrySet()) {
-          var value = visit(entry.getValue(), newEnv);
-          newEnv.register(entry.getKey(), value);
+          var value = visit(entry.getValue(), env);
+          object.register(entry.getKey(), value);
         }
-        yield JSObject.newObject(newEnv);
+        yield object;
       }
       case FieldAccess(Expr receiver, String name, int lineNumber) -> {
         var obj = asJSObject(visit(receiver, env), lineNumber);
