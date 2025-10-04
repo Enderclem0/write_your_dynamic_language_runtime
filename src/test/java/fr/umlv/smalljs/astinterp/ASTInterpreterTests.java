@@ -20,7 +20,6 @@ public class ASTInterpreterTests {
     return outStream.toString(UTF_8).replace("\r\n", "\n");
   }
 
-  /*
   @Nested
   public class Q2 {
     @Test
@@ -544,5 +543,4 @@ public class ASTInterpreterTests {
                   """));
     }
   }
-  */
 }
