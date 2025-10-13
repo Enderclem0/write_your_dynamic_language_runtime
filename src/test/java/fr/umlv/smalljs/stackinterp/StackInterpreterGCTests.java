@@ -41,7 +41,6 @@ public class StackInterpreterGCTests {
     return outStream.toString(UTF_8).replace("\r\n", "\n");
   }
 
-	/*
 	@Nested
 	public class Q2 {
 		@Test
@@ -216,5 +215,4 @@ public class StackInterpreterGCTests {
 			execute(new Code(instrs, 1, 4), dict);
 		}
 	}
-	*/
 }
